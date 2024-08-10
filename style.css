@@ -1,41 +1,197 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 50px;
+/* Certifique-se de que o html e o body ocupem toda a tela */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F2F4F8;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden; /* Evita o espaço em branco à direita */
 }
 
-h1 {
-    color: #333;
+/* Imagem no topo à esquerda */
+img#frame {
+    width: 120px;
+    height: 48px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
 }
 
-textarea {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 20px;
-    margin: 10px;
+/* Texto editável para entrada do usuário */
+#inputCriptografar {
     border: none;
-    cursor: pointer;
+    padding: 10px;
+    width: 680px;
+    height: 48px;
+    font-size: 24px;
+    color: #0A3871;
+    background-color: transparent;
+    outline: none;
+    cursor: text;
+    position: absolute;
+    top: 168px;
+    left: 240px;
+}
+
+/* Container para os botões */
+.botoes {
+    display: flex;
+    gap: 24px;
+    position: absolute;
+    top: 885px;
+    left: 240px;
+}
+
+/* Estilo para os botões */
+button {
+    width: 200px;
+    height: 50px;
     font-size: 16px;
+    cursor: pointer;
+    border-radius: 15px;
 }
 
-button:hover {
-    background-color: #45a049;
+#criptografar {
+    background-color: #0A3871;
+    color: white;
 }
 
-p {
-    color: #666;
-    font-size: 18px;
+#descriptografar {
+    background-color: #E0E0E0;
+    color: black;
 }
 
-#mensagem {
-    font-weight: bold;
-    color: #000;
+#copiar {
+    background-color: #0A3871;
+    color: white;
+    display: none;
+}
+
+/* Caixa branca à direita */
+.caixa-branca {
+    width: 400px;
+    height: 944px;
+    position: absolute;
+    top: 40px;
+    left: 1000px;
+    border-radius: 32px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.caixa-branca img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#nenhuma-mensagem {
+    color: #0A3871;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#texto-criptografar {
+    color: #0A3871;
+    font-size: 14px;
+}
+
+/* Alerta para o texto */
+.alertaTexImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 252px;
+    height: 18px;
+    position: absolute;
+    top: 851px;
+    left: 240px;
+    gap: 8px;
+    color: #0A3871;
+    white-space: nowrap;
+}
+
+.alertaTexImg img {
+    width: 20px;
+    height: auto;
+}
+
+.alertaTexImg h2 {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        padding: 20px;
+    }
+
+    img#frame {
+        width: 80px;
+        height: 32px;
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    #inputCriptografar {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 10px;
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    button {
+        width: 100%;
+        height: 50px;
+    }
+
+    .caixa-branca {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    #mensagemCriptografada,
+    #mensagemDescriptografada {
+        font-size: 18px;
+    }
+
+    #nenhuma-mensagem {
+        font-size: 18px;
+    }
+
+    #texto-criptografar {
+        font-size: 12px;
+    }
+
+    .alertaTexImg {
+        width: 100%;
+        position: static;
+        margin-top: 20px;
+        justify-content: center;
+    }
 }
